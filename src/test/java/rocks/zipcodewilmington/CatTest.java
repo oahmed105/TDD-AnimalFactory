@@ -2,8 +2,11 @@ package rocks.zipcodewilmington;
 
 import org.junit.Assert;
 import org.junit.Test;
+import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
 
+import javax.tools.JavaCompiler;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -17,6 +20,86 @@ public class CatTest {
     // TODO - Create tests for `Integer getId()`
     // TODO - Create test to check Animal inheritance; google search `java instanceof keyword`
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
+
+
+    @Test
+    public void setNameTest () {
+
+        Cat cat = new Cat(null, null, null);
+
+        String givenName = "Zula";
+        cat.setName("Zula");
+
+        String retrievedName = cat.getName();
+
+        Assert.assertEquals(givenName, retrievedName);
+    }
+
+    @Test
+    public void speakTest() {
+
+        Cat cat = new Cat(null, null, null);
+
+        String expected = "meow!";
+
+        String actual = cat.speak();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void setBirthDateTest() {
+
+        Cat cat = new Cat(null, null, null);
+
+        Date expected = new Date(12, 31, 05);
+        cat.setBirthDate(expected);
+
+        Date actual = cat.getBirthDate();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void eatTest() {
+
+        Cat cat = new Cat(null, null, null);
+
+        Food food = new Food();
+
+        cat.eat(food);
+        Integer expected = 1;
+
+        Integer actual = cat.getNumberOfMealsEaten();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getIDTest() {
+
+        Cat cat = new Cat(null, null, 3);
+
+        Integer expected = 3;
+
+        Integer actual = cat.getId();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void animalInheritanceTest() {
+
+//        Cat cat = new Cat(null, null, null);
+//
+//        boolean expected = ;
+//
+//        boolean actual = cat instanceof Animal;
+//
+//        Assert.assertEquals(expected, actual);
+    }
+
 
 
     @Test
