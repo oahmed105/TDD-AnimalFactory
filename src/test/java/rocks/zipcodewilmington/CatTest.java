@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Animal;
 import rocks.zipcodewilmington.animals.Cat;
+import rocks.zipcodewilmington.animals.Mammal;
 
 import javax.tools.JavaCompiler;
 import java.util.ArrayList;
@@ -22,6 +23,26 @@ public class CatTest {
     // TODO - Create test to check Mammal inheritance; google search `java instanceof keyword`
 
 
+    @Test
+    public void constructorTest() {
+        // Given (cat data)
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+
+        // When (we retrieve data from the cat)
+        String retrievedName = cat.getName();
+        Date retrievedBirthDate = cat.getBirthDate();
+        Integer retrievedId = cat.getId();
+
+        // Then (we expect the given data, to match the retrieved data)
+        Assert.assertEquals(givenName, retrievedName);
+        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
+        Assert.assertEquals(givenId, retrievedId);
+    }
     @Test
     public void setNameTest () {
 
@@ -91,36 +112,26 @@ public class CatTest {
     @Test
     public void animalInheritanceTest() {
 
-//        Cat cat = new Cat(null, null, null);
-//
-//        boolean expected = ;
-//
-//        boolean actual = cat instanceof Animal;
-//
-//        Assert.assertEquals(expected, actual);
+        Cat cat = new Cat(null, null, null);
+
+        boolean expected = true;
+
+        boolean actual = cat instanceof Animal;
+
+        Assert.assertEquals(expected, actual);
     }
-
-
 
     @Test
-    public void constructorTest() {
-        // Given (cat data)
-        String givenName = "Zula";
-        Date givenBirthDate = new Date();
-        Integer givenId = 0;
+    public void mammalInheritanceTest() {
 
-        // When (a cat is constructed)
-        Cat cat = new Cat(givenName, givenBirthDate, givenId);
+        Cat cat = new Cat(null, null, null);
 
-        // When (we retrieve data from the cat)
-        String retrievedName = cat.getName();
-        Date retrievedBirthDate = cat.getBirthDate();
-        Integer retrievedId = cat.getId();
+        boolean expected = true;
 
-        // Then (we expect the given data, to match the retrieved data)
-        Assert.assertEquals(givenName, retrievedName);
-        Assert.assertEquals(givenBirthDate, retrievedBirthDate);
-        Assert.assertEquals(givenId, retrievedId);
+        boolean actual = cat instanceof Mammal;
+
+        Assert.assertEquals(expected, actual);
     }
+
 
 }
