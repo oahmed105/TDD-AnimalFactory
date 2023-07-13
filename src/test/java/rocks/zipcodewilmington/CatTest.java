@@ -114,11 +114,11 @@ public class CatTest {
 
         Cat cat = new Cat(null, null, null);
 
-        boolean expected = true;
+//        boolean expected = true;
+//
+//        boolean actual = cat instanceof Animal;
 
-        boolean actual = cat instanceof Animal;
-
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(cat instanceof Animal);
     }
 
     @Test
@@ -126,11 +126,11 @@ public class CatTest {
 
         Cat cat = new Cat(null, null, null);
 
-        boolean expected = true;
+//        boolean expected = true;
+//
+//        boolean actual = cat instanceof Mammal;
 
-        boolean actual = cat instanceof Mammal;
-
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(cat instanceof Mammal);
     }
 
 

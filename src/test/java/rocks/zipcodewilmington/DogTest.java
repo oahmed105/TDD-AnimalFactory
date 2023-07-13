@@ -93,11 +93,11 @@ public class DogTest {
 
         Dog dog = new Dog(null, null, null);
 
-        boolean expected = true;
+//        boolean expected = true;
 
-        boolean actual = dog instanceof Animal;
+//        boolean actual = dog instanceof Animal;
 
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(dog instanceof Animal);
     }
 
     @Test
@@ -105,10 +105,10 @@ public class DogTest {
 
         Dog dog = new Dog(null, null, null);
 
-        boolean expected = true;
+//        boolean expected = true;
+//
+//        boolean actual = dog instanceof Mammal;
 
-        boolean actual = dog instanceof Mammal;
-
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(dog instanceof Mammal);
     }
 }
