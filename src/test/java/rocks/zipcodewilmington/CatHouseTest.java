@@ -5,6 +5,8 @@ import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
 import rocks.zipcodewilmington.animals.animal_storage.CatHouse;
 
+import java.util.Date;
+
 /**
  * @author leon on 4/19/18.
  */
@@ -29,8 +31,24 @@ public class CatHouseTest {
     }
 
     @Test
+    public void removeByIdTest() {
+        Cat cat1 = new Cat("Tony", new Date(102, 2, 5), 2);
+        Cat cat2 = new Cat("Gato", new Date(104, 11, 31), 4);
+        CatHouse catHouse = new CatHouse();
+
+        catHouse.add(cat1);
+        catHouse.add(cat2);
+        CatHouse.remove(2);
+
+        Integer expected = 1;
+        Integer actual = catHouse.getNumberOfCats();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
     public void removeTest() {
-        Cat cat = new Cat(null, null, null);
+        Cat cat = new Cat("Gato", new Date(12/31/04), 3);
         CatHouse catHouse = new CatHouse();
 
         catHouse.add(cat);
@@ -42,21 +60,7 @@ public class CatHouseTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void removeByIdTest() {
-        Cat cat = new Cat(null, null, 4);
-        CatHouse catHouse = new CatHouse();
 
-        catHouse.add(cat);
-        catHouse.add(cat);
-        catHouse.remove(4);
-
-        Integer expected = 1;
-
-        Integer actual = catHouse.getNumberOfCats();
-
-        Assert.assertEquals(expected, actual);
-    }
 
     @Test
     public void getCatByIdTest() {
