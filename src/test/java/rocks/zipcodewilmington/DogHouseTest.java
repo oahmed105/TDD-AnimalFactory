@@ -23,6 +23,8 @@ public class DogHouseTest {
     public void addTest() {
         Dog dog = new Dog(null, null, null);
         DogHouse dogHouse = new DogHouse();
+        dogHouse.clear();
+
 
         dogHouse.add(dog);
         Integer expected = 1;
@@ -49,6 +51,8 @@ public class DogHouseTest {
     public void removeTest() {
         Dog dog = new Dog(null, null, null);
         DogHouse dogHouse = new DogHouse();
+        dogHouse.clear();
+
 
         dogHouse.add(dog);
         dogHouse.remove(dog);
@@ -63,6 +67,8 @@ public class DogHouseTest {
     public void removeByIdTest() {
         Dog dog = new Dog(null, null, 4);
         DogHouse dogHouse = new DogHouse();
+        dogHouse.clear();
+
 
         dogHouse.add(dog);
         dogHouse.add(dog);
@@ -79,6 +85,8 @@ public class DogHouseTest {
     public void getDogByIdTest() {
         Dog dog = new Dog(null,null,4);
         DogHouse dogHouse = new DogHouse();
+        dogHouse.clear();
+
 
         dogHouse.add(dog);
         Dog expected = dog;
@@ -93,6 +101,8 @@ public class DogHouseTest {
     public void getNumberOfDogTest() {
         Dog dog = new Dog(null,null,null);
         DogHouse dogHouse = new DogHouse();
+        dogHouse.clear();
+
 
         dogHouse.add(dog);
         dogHouse.add(dog);

@@ -35,6 +35,7 @@ public class CatHouseTest {
         Cat cat1 = new Cat("Tony", new Date(102, 2, 5), 2);
         Cat cat2 = new Cat("Gato", new Date(104, 11, 31), 4);
         CatHouse catHouse = new CatHouse();
+        catHouse.clear();
 
         catHouse.add(cat1);
         catHouse.add(cat2);
@@ -50,6 +51,8 @@ public class CatHouseTest {
     public void removeTest() {
         Cat cat = new Cat("Gato", new Date(12/31/04), 3);
         CatHouse catHouse = new CatHouse();
+        catHouse.clear();
+
 
         catHouse.add(cat);
         catHouse.remove(cat);
@@ -66,6 +69,8 @@ public class CatHouseTest {
     public void getCatByIdTest() {
         Cat cat = new Cat(null,null,4);
         CatHouse catHouse = new CatHouse();
+        catHouse.clear();
+
 
         catHouse.add(cat);
         Cat expected = cat;
@@ -80,6 +85,8 @@ public class CatHouseTest {
     public void getNumberOfCatTest() {
         Cat cat = new Cat(null,null,null);
         CatHouse catHouse = new CatHouse();
+        catHouse.clear();
+
 
         catHouse.add(cat);
         catHouse.add(cat);
